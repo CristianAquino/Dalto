@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #282c34;
+  font-family: sans-serif;
+}
+
+.contenedor > input[type="button"] {
+  background-color: #03afff;
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+  padding: 10px;
+  font-size: 18px;
+}
+
+input[type="button"]:hover {
+  filter: opacity(0.9);
+  transform: scale(1.04);
+}
+
+.entrada {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  padding: 10px;
+  font-size: 18px;
+}
+.contenedor .uno {
+  grid-area: uno;
+}
+.contenedor .dos {
+  grid-area: dos;
+}
+.contenedor .tres {
+  grid-area: tres;
+}
+.contenedor .cuatro {
+  grid-area: cuatro;
+}
+.contenedor .cinco {
+  grid-area: cinco;
+}
+.contenedor .seis {
+  grid-area: seis;
+}
+.contenedor .siete {
+  grid-area: siete;
+}
+.contenedor .ocho {
+  grid-area: ocho;
+}
+.contenedor .nueve {
+  grid-area: nueve;
+}
+.contenedor .cero {
+  grid-area: cero;
+}
+.contenedor .suma {
+  grid-area: suma;
+}
+.contenedor .diferencia {
+  grid-area: diferencia;
+}
+.contenedor .producto {
+  grid-area: producto;
+}
+.contenedor .cociente {
+  grid-area: cociente;
+}
+.contenedor .resultado {
+  grid-area: resultado;
+}
+
+.contenedor {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "entrada entrada entrada entrada entrada"
+    "uno dos tres suma diferencia"
+    "cuatro cinco seis suma producto"
+    "siete ocho nueve cociente cociente"
+    "cero cero cero resultado resultado";
+}
+
+@media (max-width: 600px) {
+  .contenedor {
+    display: grid;
+    gap: 10px;
+    grid-template-areas:
+      "entrada entrada entrada "
+      "uno dos suma "
+      "tres cuatro diferencia"
+      "cinco seis producto"
+      "siete ocho cociente"
+      "nueve cero resultado";
+  }
+}

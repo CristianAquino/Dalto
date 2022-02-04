@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+}
+.parafo{
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid green;
+    padding: 25px;
+}
+.lorem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    width: 800px;
+    height: 500px;
+} 
+.imagev{
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    height: 25px;
+    border-radius: 5px;
+    padding: 0 20px;   
+    background-image: url(img/postura.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    box-sizing: border-box;
+    outline: none;
+}
+
+button{
+    background-color: blue;
+    transition: transform 2s;
+}
+
+button:hover{
+    background-color: red;
+    outline: none;
+    padding: 50px;
+    border-radius: 10px;
+    transform: rotate(360deg);
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
+}
+.flex-container>div{
+    background-color: gray;
+    padding: 10px;
+    margin: 10px;
+    font-size: 30px;
+}
+@media (max-width:920px) {
+    .flex-container{
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+}

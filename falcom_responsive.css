@@ -1,0 +1,181 @@
+/* FORMA NO RECOMENDADA */
+/* @import url('https://fonts.googleapis.com/css2? family = Roboto: wght @ 100 & display = swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #e9ecf4;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .sidebar,
+.contenedor .contenido,
+.contenedor .footer{
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .header{
+    background-color: #12203e;
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.contenedor .contenido{
+    grid-column: span 2;
+}
+
+.contenedor .sidebar{
+    grid-column: 3 / 4;
+    background-color: #faa43d;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-row: span 2;
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2{
+    background-color: #55a8fd;
+    color: white;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .footer{
+    background-color: #12203e;
+    color: white;
+    grid-column: span 3;
+}
+
+@media (max-width: 768px) {
+    .contenedor .contenido{
+        grid-column: 1 / -1;
+    }
+
+    .contenedor .sidebar{
+        grid-column: 1 / -1;
+    }
+    .contenedor .widget-1{
+        grid-column: span 2;
+    }
+} */
+
+/* FORMA RECOMENDADA USANDO AREAS */
+@import url('https://fonts.googleapis.com/css2? family = Roboto: wght @ 100 & display = swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #e9ecf4;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas: "header header header"
+                        "contenido contenido sidebar"
+                        "widget-1 widget-2 sidebar"
+                        "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .sidebar,
+.contenedor .contenido,
+.contenedor .footer{
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .header{
+    background-color: #12203e;
+    color: white;
+    grid-area: header;
+}
+
+.contenedor .contenido{
+    grid-area: contenido;
+}
+
+.contenedor .sidebar{
+    grid-column: 3 / 4;
+    background-color: #faa43d;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    grid-area: sidebar;
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2{
+    background-color: #55a8fd;
+    color: white;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-1{
+    grid-area: widget-1;
+}
+
+.contenedor .widget-2{
+    grid-area: widget-2;
+}
+
+.contenedor .footer{
+    background-color: #12203e;
+    color: white;
+    grid-area: footer;
+}
+
+@media (max-width:768px) {
+    
+    .contenedor{
+        grid-template-areas: "header header header"
+                            "contenido contenido contenido"
+                            "sidebar sidebar sidebar"
+                            "widget-1 widget-1 widget-2 "
+                            "footer footer footer";
+    }
+}

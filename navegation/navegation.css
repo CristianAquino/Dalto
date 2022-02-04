@@ -1,0 +1,158 @@
+.dark {
+  background-color: black;
+}
+
+form > * {
+  display: block;
+}
+
+.contenedor_botones{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+}
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background-color: #141414;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: .3s ease all;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.btn span{
+  position: relative;
+  z-index: 2;
+  transition: .3s ease all;
+}
+.uno::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #c4d107;
+  position: absolute;
+  z-index: 1;
+  top: -80px;
+  left: 0;
+  transition: .3s ease-in-out all;
+}
+.uno:hover::after{
+  top: 0;
+}
+
+.dos::after{
+  content: "";
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc(-100% - 80px);
+  border-bottom: 80px solid #286cff;
+  border-right: 80px solid transparent;
+  transition: .4s ease-in-out all;
+}
+.dos:hover::after{
+  left: 0;
+}
+
+.tres::after{
+  content: "";
+  width: 100%;
+  height: 300px;
+  background-color: #18a362;
+  position: absolute;
+  z-index: 1;
+  top: -300px;
+  left: 0;
+  transition: .4s ease-in-out all;
+  border-radius: 0 0 300px 300px;
+}
+.tres:hover::after{
+  top: 0;
+}
+
+.cuatro::after{
+  content: "";
+  width: 1px;
+  height: 1px;
+  background-color: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transition: .3s ease-in-out all;
+  border-radius: 50%;
+  transform-origin: center;
+}
+.cuatro:hover::after{
+  transform: scale(200);
+  background-color: #cc1010;
+}
+.cuatro:hover{
+  background-color: #960909;
+}
+
+.cinco span{
+  transition: .4s ease-out all;
+  position: absolute;
+  left: 40%;
+}
+.icono{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  left: -40px;
+  transition: .3s ease-in-out all;
+  opacity: 0;
+}
+.icono i{
+  color: white;
+  font-size: 35px;
+}
+.cinco:hover .icono{
+  left: calc(100% - 50px);
+  opacity: 1;
+}
+.cinco:hover{
+  background-color: #2f9b05;
+}
+.cinco:hover span{
+  left: 20px;
+}
+
+.seis{
+  background: none;
+  color: black;
+}
+
+.seis svg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: none;
+}
+.seis rect{
+  width: 100%;
+  height: 100%;
+  stroke: black;
+  stroke-width: 10px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: .6s ease all;
+}
+.seis:hover rect{
+  stroke-dashoffset: 0;
+}

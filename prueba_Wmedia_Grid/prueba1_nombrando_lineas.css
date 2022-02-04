@@ -1,0 +1,53 @@
+/* Nombrando lineas y grid implicita(vista superficial) */
+* {
+  box-sizing: border-box;
+}
+/* 
+.main{
+  height: 100vh;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* para la grid implicita
+  grid-auto-rows: 1fr;
+}
+*/
+
+.main {
+  display: grid;
+  height: 100vh;
+  gap: 10px;
+  /* grid-template-columns: 20% 80%; */
+  /* nombrando lineas - es necesario el start */
+  grid-template-columns:
+    [sidebar-start] 1fr
+    [sidebar-end contenido-start] 2fr
+    [contenido-end]; /* no se especifica tamaño q es la linea final*/
+
+  grid-template-rows:
+    [header-start] 1fr
+    [header-end contenido-start] 2fr
+    [footer-start] 1fr
+    [footer-end];
+}
+
+.main > * {
+  font-family: sans-serif;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  grid-column: sidebar-start / contenido-end;
+}
+
+.footer {
+  grid-column: contenido-start / contenido-end;
+}
+
+.aside {
+  grid-row: header-end / footer-end;
+}

@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+/* 
+.main {
+  display: grid;
+  height: 100vh;
+  gap: 10px;
+  font-family: sans-serif;
+   grid-template-columns: repeat(8, minmax(100px, 1fr));
+   grid-template-columns: repeat(4, 30px minmax(10%, 1fr));
+   min-content: se utiliza para realizar una especie de wrap y max-content:la columna nunca ocupara mas espacio q su contenido
+   grid-template-columns: repeat(8,minmax(min-content,30%));
+  grid-template-columns: repeat(8,minmax(min-content,max-content));
+} */
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: white;
+}
+/* usando dense, el cual viene bien para una galeria de imagenes */
+
+main {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: minmax(150px, 1fr);
+  grid-auto-columns: minmax(150px, 1fr);
+  grid-auto-flow: column dense;
+}
+
+div{
+  background-color: goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+}
+
+div:nth-child(3n){
+  background-color: aqua;
+  grid-column-end: span 2;
+}
+
+div:nth-child(7n){
+  background-color: black;
+  grid-row-end: span 3;
+}
